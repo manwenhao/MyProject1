@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import cn.smssdk.EventHandler;
 import cn.smssdk.SMSSDK;
+import cn.smssdk.utils.SMSLog;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -23,7 +24,7 @@ import android.widget.FrameLayout.LayoutParams;
 
 import com.mob.MobSDK;
 
-public class BindPhoneActivity extends AppCompatActivity implements OnClickListener {
+public class BindPhoneActivity extends Activity implements OnClickListener {
     String APPKEY = "2165712e664fe";
     String APPSECRETE = "6d5f2ffe527c08738bd583749852ee6c";
 
@@ -62,7 +63,6 @@ public class BindPhoneActivity extends AppCompatActivity implements OnClickListe
         commitBtn.setOnClickListener(this);
 
         // 启动短信验证sdk
-        MobSDK.init(this, APPKEY, APPSECRETE);
         EventHandler eventHandler = new EventHandler(){
             @Override
             public void afterEvent(int event, int result, Object data) {
@@ -114,7 +114,7 @@ public class BindPhoneActivity extends AppCompatActivity implements OnClickListe
                 //将收到的验证码和手机号提交再次核对
                 SMSSDK.submitVerificationCode("86", phoneNums, inputCodeEt
                         .getText().toString());
-                //createProgressBar();
+                createProgressBar();
                 break;
         }
     }
@@ -141,7 +141,7 @@ public class BindPhoneActivity extends AppCompatActivity implements OnClickListe
                         Toast.makeText(getApplicationContext(), "提交验证码成功",
                                 Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(BindPhoneActivity.this,
-                                MainActivity.class);
+                                ResetPasswordActivity.class);
                         startActivity(intent);
                     } else if (event == SMSSDK.EVENT_GET_VERIFICATION_CODE) {
                         Toast.makeText(getApplicationContext(), "正在获取验证码",
