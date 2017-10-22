@@ -1,0 +1,185 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#fff"
+        android:gravity="center"
+        android:text="考勤"
+        android:textColor="#000"
+        android:textSize="20sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="#D1EEEE"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <Button
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:background="@drawable/rb_sign_in"
+            android:text="上班打卡"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#fff"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:text="每天请及时点击按钮完成签到哦~"
+            android:textSize="13sp"
+            android:textColor="#2B2B2B"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:background="#F4F4F4"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#fff">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#969696" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#fff"
+            android:layout_marginRight="15dp">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_weight="0"
+                android:background="@drawable/btn_notice"
+                android:layout_marginTop="7dp"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical"
+                />
+
+            <Button
+                android:id="@+id/btn_attendence"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="16dp"
+                android:layout_weight="1"
+                android:background="#fff"
+                android:drawableRight="@drawable/right"
+                android:gravity="center_vertical"
+                android:text="考勤信息"
+                android:textColor="#000"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#969696"
+                android:layout_marginLeft="55dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#fff"
+            android:layout_marginRight="15dp">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_weight="0"
+                android:background="@drawable/leave"
+                android:layout_marginTop="7dp"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical"
+                />
+
+            <Button
+                android:id="@+id/btn_leave"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="16dp"
+                android:layout_weight="1"
+                android:background="#fff"
+                android:drawableRight="@drawable/right"
+                android:gravity="center_vertical"
+                android:text="请假申请"
+                android:textColor="#000"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#969696"
+                android:layout_marginLeft="55dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="#fff"
+                android:layout_marginRight="15dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="0"
+                    android:background="@drawable/leave"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginLeft="15dp"
+                    android:gravity="center_vertical"
+                    />
+
+                <Button
+                    android:id="@+id/btn_travel"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_weight="1"
+                    android:background="#fff"
+                    android:drawableRight="@drawable/right"
+                    android:gravity="center_vertical"
+                    android:text="出差申请"
+                    android:textColor="#000"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#969696" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

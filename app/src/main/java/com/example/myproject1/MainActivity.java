@@ -7,8 +7,8 @@ import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.RadioGroup;
 
+import com.example.myproject1.Fragment.AttendenceFragment;
 import com.example.myproject1.Fragment.MeFragment;
-import com.example.myproject1.Fragment.NoticeFragment;
 import com.example.myproject1.Fragment.PhoneBookFragment;
 import com.example.myproject1.Fragment.TaskFragment;
 
@@ -30,23 +30,23 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
                 switch (checkedId) {
-                    case R.id.rb_notice:
-                        changeFragment(NoticeFragment.class.getName());
+                    case R.id.rb_me:
+                        changeFragment(MeFragment.class.getName());
                         break;
                     case R.id.rb_task:
-                        changeFragment(PhoneBookFragment.class.getName());
+                        changeFragment(TaskFragment.class.getName());
                         break;
                     case R.id.rb_phone_book:
                         changeFragment(PhoneBookFragment.class.getName());
                         break;
-                    case R.id.rb_me:
-                        changeFragment(MeFragment.class.getName());
+                    case R.id.rb_attendence:
+                        changeFragment(AttendenceFragment.class.getName());
                         break;
                 }
             }
         });
         if(savedInstanceState == null){
-            changeFragment(NoticeFragment.class.getName());
+            changeFragment(MeFragment.class.getName());
         }
     }
 
@@ -62,14 +62,14 @@ public class MainActivity extends AppCompatActivity {
         if (fragment != null) {
             transaction.show(fragment);
         } else {
-            if (tag.equals(NoticeFragment.class.getName())) {
-                fragment = NoticeFragment.newInstance();
+            if (tag.equals(MeFragment.class.getName())) {
+                fragment = MeFragment.newInstance();
             } else if (tag.equals(TaskFragment.class.getName())) {
                 fragment = TaskFragment.newInstance();
             } else if (tag.equals(PhoneBookFragment.class.getName())) {
                 fragment = PhoneBookFragment.newInstance();
-            } else if (tag.equals(MeFragment.class.getName())) {
-                fragment = MeFragment.newInstance();
+            } else if (tag.equals(AttendenceFragment.class.getName())) {
+                fragment = AttendenceFragment.newInstance();
             }
             mFragmentList.add(fragment);
             transaction.add(R.id.fl_container, fragment, fragment.getClass().getName());

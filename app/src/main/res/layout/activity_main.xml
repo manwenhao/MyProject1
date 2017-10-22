@@ -29,7 +29,7 @@
         android:paddingTop="7dp">
 
         <RadioButton
-            android:id="@+id/rb_notice"
+            android:id="@+id/rb_me"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -37,9 +37,9 @@
             android:button="@null"
             android:checked="true"
             android:drawablePadding="3dp"
-            android:drawableTop="@drawable/rb_notice"
+            android:drawableTop="@drawable/rb_me"
             android:gravity="center"
-            android:text="公告"
+            android:text="个人中心"
             android:textColor="@color/main_tab_text_selector_tab"
             android:textSize="10sp" />
 
@@ -72,16 +72,16 @@
             android:textSize="10sp" />
 
         <RadioButton
-            android:id="@+id/rb_me"
+            android:id="@+id/rb_attendence"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:button="@null"
             android:drawablePadding="3dp"
-            android:drawableTop="@drawable/rb_me"
+            android:drawableTop="@drawable/rb_attendence"
             android:gravity="center"
-            android:text="我"
+            android:text="考勤"
             android:textColor="@color/main_tab_text_selector_tab"
             android:textSize="10sp" />
     </RadioGroup>

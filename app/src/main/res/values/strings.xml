@@ -14,4 +14,19 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+
+    <string-array name="leave">
+        <item>事假</item>
+        <item>病假</item>
+        <item>年假</item>
+        <item>婚假</item>
+        <item>产假</item>
+        <item>其他</item>
+    </string-array>
+
+    <string-array name="travel">
+        <item>国内</item>
+        <item>国外</item>
+    </string-array>
+
 </resources>

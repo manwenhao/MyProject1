@@ -20,19 +20,29 @@ public class LoginActivity extends AppCompatActivity {
     private EditText accountEdit;
     private EditText passwordEdit;
     private Button login;
+    private Button forgetpw;
     private CheckBox rememberPass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
         setContentView(R.layout.activity_login);
         pref = PreferenceManager.getDefaultSharedPreferences(this);  //获取SharedPreferences对象
         accountEdit = (EditText) findViewById(R.id.account);
         passwordEdit = (EditText) findViewById(R.id.password);
-        rememberPass = (CheckBox) findViewById(R.id.remember_pass);
+        rememberPass = (CheckBox) findViewById(R.id.remember_pw);
+        forgetpw = (Button) findViewById(R.id.btn_forget_pw);
         login = (Button) findViewById(R.id.login);
+
+        forgetpw.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this,ResetPasswordActivity.class);
+                startActivity(intent);
+            }
+        });
+
         boolean isRemember = pref.getBoolean("remember_password",false);//获取remember_password键对应的值
         if (isRemember) {
             //将帐号密码设置到文本框中
@@ -58,7 +68,7 @@ public class LoginActivity extends AppCompatActivity {
                         editor.clear();
                     }
                     editor.apply();
-                    Intent intent = new Intent(LoginActivity.this,BindPhoneActivity.class);
+                    Intent intent = new Intent(LoginActivity.this,MainActivity.class);
                     startActivity(intent);
                     finish();
                 } else {

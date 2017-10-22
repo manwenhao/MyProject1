@@ -28,6 +28,8 @@ public class BindPhoneActivity extends Activity implements OnClickListener {
     String APPKEY = "2165712e664fe";
     String APPSECRETE = "6d5f2ffe527c08738bd583749852ee6c";
 
+    private Button backBtn;
+
     // 手机号输入框
     private EditText inputPhoneEt;
 
@@ -55,10 +57,12 @@ public class BindPhoneActivity extends Activity implements OnClickListener {
      * 初始化控件
      */
     private void init() {
+        backBtn = (Button) findViewById(R.id.btn_bindphone_back);
         inputPhoneEt = (EditText) findViewById(R.id.login_input_phone_et);
         inputCodeEt = (EditText) findViewById(R.id.login_input_code_et);
         requestCodeBtn = (Button) findViewById(R.id.login_request_code_btn);
         commitBtn = (Button) findViewById(R.id.login_commit_btn);
+        backBtn.setOnClickListener(this);
         requestCodeBtn.setOnClickListener(this);
         commitBtn.setOnClickListener(this);
 
@@ -81,6 +85,9 @@ public class BindPhoneActivity extends Activity implements OnClickListener {
     public void onClick(View v) {
         String phoneNums = inputPhoneEt.getText().toString();
         switch (v.getId()) {
+            case R.id.btn_bindphone_back:
+                finish();
+
             case R.id.login_request_code_btn:
                 // 1. 通过规则判断手机号
                 if (!judgePhoneNums(phoneNums)) {
@@ -141,7 +148,7 @@ public class BindPhoneActivity extends Activity implements OnClickListener {
                         Toast.makeText(getApplicationContext(), "提交验证码成功",
                                 Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(BindPhoneActivity.this,
-                                ResetPasswordActivity.class);
+                                MainActivity.class);
                         startActivity(intent);
                     } else if (event == SMSSDK.EVENT_GET_VERIFICATION_CODE) {
                         Toast.makeText(getApplicationContext(), "正在获取验证码",
